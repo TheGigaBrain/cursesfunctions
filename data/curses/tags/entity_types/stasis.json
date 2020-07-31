@@ -1,0 +1,13 @@
+{
+    "values":[
+        "#minecraft:arrows",
+        "minecraft:egg",
+        "minecraft:item",
+        "minecraft:potion",
+        "minecraft:ender_pearl",
+        "minecraft:trident",
+        "minecraft:snowball",
+        "minecraft:falling_block",
+        "minecraft:tnt"
+    ]
+}

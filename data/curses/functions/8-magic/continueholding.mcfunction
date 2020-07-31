@@ -1,0 +1,5 @@
+execute if score @s mana >= @s requiredmana run title @s actionbar {"text":"Mana: ","color":"aqua","extra":[{"color":"green","score":{"name":"*","objective":"manadisplay"}},{"text":"% / ","color":"aqua"},{"color":"dark_aqua","score":{"name":"*","objective":"reqmanadisplay"}},{"text":"%","color":"aqua"}]}
+execute if score @s mana < @s requiredmana run title @s actionbar {"text":"Mana: ","color":"aqua","extra":[{"color":"red","score":{"name":"*","objective":"manadisplay"}},{"text":"% / ","color":"aqua"},{"color":"dark_aqua","score":{"name":"*","objective":"reqmanadisplay"}},{"text":"%","color":"aqua"}]}
+
+execute positioned ~ ~-1 ~ anchored eyes run teleport @e[tag=clicktest,sort=nearest,limit=1,distance=..4] ^ ^ ^1
+execute unless entity @e[tag=clicktest,distance=..4] run summon villager ^ ^ ^-1 {Invulnerable:1,Silent:1,NoAI:1,Offers:{},ActiveEffects:[{Id:14,Duration:999999999,Amplifier:0,ShowParticles:0b}],Tags:["clicktest"]}

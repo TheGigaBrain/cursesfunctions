@@ -1,0 +1,195 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:coal",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{LostSoulDrop:1}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "conditions": [
+                {
+                    "condition": "random_chance",
+                    "chance": 0.5
+                }
+            ],
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:bow",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Cursed:1,PermanentlyCursed:1,Unbreakable:1,display:{Name:\"{\\\"text\\\":\\\"Recurve of the Cursed\\\",\\\"color\\\":\\\"dark_red\\\",\\\"bold\\\":\\\"true\\\",\\\"italic\\\":\\\"false\\\"}\"},Enchantments:[{id:infinity,lvl:1},{id:flame,lvl:1},{id:power,lvl:7}]}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:diamond_sword",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Cursed:1,PermanentlyCursed:1,Unbreakable:1,display:{Name:\"{\\\"text\\\":\\\"Blade of the Cursed\\\",\\\"color\\\":\\\"dark_red\\\",\\\"bold\\\":\\\"true\\\",\\\"italic\\\":\\\"false\\\"}\"},Enchantments:[{id:fire_aspect,lvl:3},{id:sharpness,lvl:7}]}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:diamond_boots",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Cursed:1,PermanentlyCursed:1,Unbreakable:1,display:{Name:\"{\\\"text\\\":\\\"Sabatons of the Cursed\\\",\\\"color\\\":\\\"dark_red\\\",\\\"bold\\\":\\\"true\\\",\\\"italic\\\":\\\"false\\\"}\"},Enchantments:[{id:protection,lvl:5}]}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:diamond_leggings",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Cursed:1,PermanentlyCursed:1,Unbreakable:1,display:{Name:\"{\\\"text\\\":\\\"Greaves of the Cursed\\\",\\\"color\\\":\\\"dark_red\\\",\\\"bold\\\":\\\"true\\\",\\\"italic\\\":\\\"false\\\"}\"},Enchantments:[{id:protection,lvl:5}]}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:diamond_chestplate",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Cursed:1,PermanentlyCursed:1,Unbreakable:1,display:{Name:\"{\\\"text\\\":\\\"Plate of the Cursed\\\",\\\"color\\\":\\\"dark_red\\\",\\\"bold\\\":\\\"true\\\",\\\"italic\\\":\\\"false\\\"}\"},Enchantments:[{id:protection,lvl:5}]}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:diamond_helmet",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Cursed:1,PermanentlyCursed:1,Unbreakable:1,display:{Name:\"{\\\"text\\\":\\\"Visage of the Cursed\\\",\\\"color\\\":\\\"dark_red\\\",\\\"bold\\\":\\\"true\\\",\\\"italic\\\":\\\"false\\\"}\"},Enchantments:[{id:protection,lvl:5}]}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:diamond_axe",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{Cursed:1,PermanentlyCursed:1,Unbreakable:1,display:{Name:'{\"text\":\"Cleaver of the Cursed\",\"color\":\"dark_red\",\"bold\":\"true\",\"italic\":\"false\"}'},Enchantments:[{id:sharpness,lvl:7},{id:efficiency,lvl:6},{id:fire_aspect,lvl:2}]}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "weight": 1,
+                    "name": "minecraft:entities/wither_skeleton"
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "conditions": [
+                {
+                    "condition": "random_chance",
+                    "chance": 0.1
+                }
+            ],
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:blaze_rod",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{WandSpell:\"death\",display:{Name:'{\"text\":\"Wand of Death\",\"color\":\"dark_gray\",\"italic\":\"false\",\"bold\":\"true\"}',Lore:['\"\"','{\"text\":\"Fires a bolt of death.\",\"color\":\"gray\",\"italic\":\"false\"}']}}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:blaze_rod",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{WandSpell:\"cleansing\",display:{Name:'{\"text\":\"Wand of Recovery\",\"color\":\"green\",\"italic\":\"false\",\"bold\":\"true\"}',Lore:['\"\"','{\"text\":\"Heals and clears potion effects.\",\"color\":\"gray\",\"italic\":\"false\"}']}}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:blaze_rod",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{WandSpell:\"fireball\",display:{Name:'{\"text\":\"Wand of Fire\",\"color\":\"red\",\"italic\":\"false\",\"bold\":\"true\"}',Lore:['\"\"','{\"text\":\"Casts a beam of flame.\",\"color\":\"gray\",\"italic\":\"false\"}']}}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:blaze_rod",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{WandSpell:\"teleport\",display:{Name:'{\"text\":\"Wand of Teleportation\",\"color\":\"dark_purple\",\"italic\":\"false\",\"bold\":\"true\"}',Lore:['\"\"','{\"text\":\"Teleports you to your cursor.\",\"color\":\"gray\",\"italic\":\"false\"}']}}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:blaze_rod",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{WandSpell:\"digging\",display:{Name:'{\"text\":\"Wand of Digging\",\"color\":\"gold\",\"italic\":\"false\",\"bold\":\"true\"}',Lore:['\"\"','{\"text\":\"Razes blocks in front of you.\",\"color\":\"gray\",\"italic\":\"false\"}']}}"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "name": "minecraft:blaze_rod",
+                    "functions": [
+                        {
+                            "function": "set_nbt",
+                            "tag": "{WandSpell:\"time\",display:{Name:'{\"text\":\"Wand of Time\",\"color\":\"blue\",\"italic\":\"false\",\"bold\":\"true\"}',Lore:['\"\"','{\"text\":\"Minecraft: Become Dio\",\"color\":\"gray\",\"italic\":\"false\"}']}}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
