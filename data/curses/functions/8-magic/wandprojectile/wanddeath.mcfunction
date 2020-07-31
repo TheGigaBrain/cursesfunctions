@@ -4,9 +4,11 @@ execute if score @s cursetimer matches 60.. run kill @s
 particle minecraft:dust 0 0 0 1.5 ~ ~ ~ 0.5 0.5 0.5 0 10 force
 playsound minecraft:block.fire.extinguish player @a ~ ~ ~ 1 2
 
-summon area_effect_cloud ~ ~ ~ {Tags:["deathvectortest"]}
-data modify entity @e[tag=deathvectortest,sort=nearest,limit=1] Pos set from entity @s Motion
-execute positioned 0.0 0.0 0.0 if entity @e[tag=deathvectortest,distance=..0.3] run kill @s
+summon area_effect_cloud ~ ~ ~ {Tags:["deathvector"]}
+data modify entity @e[tag=deathvector,sort=nearest,limit=1] Pos set from entity @s Motion
+execute as @e[tag=deathvector] at @s run summon area_effect_cloud ~ ~ ~ {Tags:["deathvectortest"]}
+execute positioned 0.0 0.0 0.0 if entity @e[tag=deathvectortest,distance=..0.3] at @s positioned ~ ~0.5 ~ run kill @s
+kill @e[tag=deathvector]
 kill @e[tag=deathvectortest]
 execute store result entity @s Motion[0] double 0.00001 run scoreboard players get @s Motion0
 execute store result entity @s Motion[1] double 0.00001 run scoreboard players get @s Motion1
