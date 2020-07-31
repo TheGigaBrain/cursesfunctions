@@ -3,7 +3,7 @@ scoreboard players remove @s cursetimer 1
 scoreboard players set @s timerdivisor 40
 scoreboard players operation @s soultimer = @s cursetimer
 scoreboard players operation @s soultimer %= @s timerdivisor
-execute as @s[scores={soultimer=0}] run playsound minecraft:block.note_block.hat player @a ~ ~ ~ 3 1
+execute as @s[scores={soultimer=0,cursetimer=1..}] run playsound minecraft:block.note_block.hat player @a ~ ~ ~ 3 1
 execute as @s[scores={soultimer=20}] run playsound minecraft:block.note_block.hat player @a ~ ~ ~ 3 0.85
 
 #particle minecraft:barrier ~ ~ ~ 12 12 12 0 4 force
