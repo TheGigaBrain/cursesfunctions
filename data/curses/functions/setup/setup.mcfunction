@@ -38,6 +38,8 @@ execute in minecraft:the_nether run fill 2 1 1 2 1 3 diamond_block
 execute in minecraft:the_nether run fill 1 1 2 3 1 2 diamond_block
 execute in minecraft:the_nether run setblock 2 1 2 gold_block
 
+execute in minecraft:the_end run forceload add -1 -1 0 0
+
 
 tellraw @a {"text":"Curses & Wands setup complete!","color":"light_purple","bold":"true"}
 
