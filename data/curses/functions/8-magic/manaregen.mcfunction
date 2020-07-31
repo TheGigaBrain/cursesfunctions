@@ -4,7 +4,7 @@ scoreboard players set @s timerdivisor 20
 scoreboard players operation @s manadisplay /= @s timerdivisor
 
 scoreboard players set @s requiredmana 0
-execute if data entity @s {SelectedItem:{tag:{WandSpell:"fireball"}}} run scoreboard players set @s requiredmana 200
+execute if data entity @s {SelectedItem:{tag:{WandSpell:"fireball"}}} run scoreboard players set @s requiredmana 300
 execute if data entity @s {SelectedItem:{tag:{WandSpell:"digging"}}} run scoreboard players set @s requiredmana 500
 execute if data entity @s {SelectedItem:{tag:{WandSpell:"teleport"}}} run scoreboard players set @s requiredmana 1000
 execute if data entity @s {SelectedItem:{tag:{WandSpell:"cleansing"}}} run scoreboard players set @s requiredmana 1200

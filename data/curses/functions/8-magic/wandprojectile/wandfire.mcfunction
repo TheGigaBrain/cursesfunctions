@@ -3,7 +3,7 @@ execute if score @s cursetimer matches 100.. run kill @s
 
 summon area_effect_cloud ~ ~ ~ {Tags:["firevectortest"]}
 data modify entity @e[tag=firevectortest,sort=nearest,limit=1] Pos set from entity @s Motion
-execute positioned 0.0 0.0 0.0 if entity @e[tag=firevectortest,distance=..1.3] run kill @s
+execute positioned 0.0 0.0 0.0 if entity @e[tag=firevectortest,distance=..1.3] at @s positioned ~ ~0.5 ~ run function curses:8-magic/wandprojectile/wandfire/collision
 kill @e[tag=firevectortest]
 execute store result entity @s Motion[0] double 0.00001 run scoreboard players get @s Motion0
 execute store result entity @s Motion[1] double 0.00001 run scoreboard players get @s Motion1
