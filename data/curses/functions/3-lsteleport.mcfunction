@@ -3,4 +3,4 @@ execute as @e[tag=lostsoul,scores={cursetimer=520}] at @s run playsound minecraf
 execute as @e[tag=lostsoul,scores={cursetimer=600..}] run function curses:3-lsteleport/teleportsoul
 execute as @e[tag=lostsoul,scores={cursetimer=20}] at @s run data merge entity @s {NoAI:0}
 
-execute as @e[tag=lostsoul,scores={cursetimer=1}] run function curses:3-lsteleport/healsoul
+#execute as @e[tag=lostsoul,scores={cursetimer=1}] run function curses:3-lsteleport/healsoul
