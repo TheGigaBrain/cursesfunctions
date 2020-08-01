@@ -6,3 +6,4 @@ function curses:5-anticheese
 function curses:6-soulcannon
 function curses:7-souldeparture
 function curses:8-magic
+function curses:9-itemcrafting

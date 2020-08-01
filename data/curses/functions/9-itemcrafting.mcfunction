@@ -1,0 +1,1 @@
+execute as @e[type=item] if data entity @s Item.tag.CursesId at @s run function curses:9-itemcrafting/cursescrafting
