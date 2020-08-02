@@ -1,4 +1,4 @@
-execute as @e[tag=lostsoul] run function curses:6-soulcannon/firearrow
+execute as @e[tag=lostsoul,nbt=!{NoAI:1b}] run function curses:6-soulcannon/firearrow
 
 # Make the area-effect-cloud move with the arrow projectile, so it ends up where the arrow lands
 execute as @e[tag=movingsoulfield] at @s unless entity @e[tag=soulcannon,distance=..2.1] run tag @s remove movingsoulfield
