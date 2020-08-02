@@ -8,3 +8,9 @@ execute as @a[scores={cursetimer=1200..,virus=30..}] at @s run function curses:0
 scoreboard players reset @a[scores={virus=30..}] virus
 scoreboard players reset @a[scores={cursetimer=1200..}] cursetimer
 scoreboard players reset @a[nbt=!{Inventory:[{tag:{Cursed:1}}]}] cursetimer
+
+# Cursed iron golems.
+execute as @e[tag=cursedgolem] run scoreboard players add @s cursetimer 1
+execute as @e[tag=cursedgolem] at @s run particle minecraft:dust 0.4 0 0.4 0.75 ~ ~1.5 ~ 0.75 1 0.75 0 1 normal
+execute as @e[tag=cursedgolem,scores={cursetimer=2400..}] at @s run particle minecraft:dragon_breath ~ ~1.5 ~ 0 0 0 0.2 100 force
+execute as @e[tag=cursedgolem,scores={cursetimer=2400..}] run kill @s
