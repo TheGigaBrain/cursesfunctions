@@ -41,7 +41,7 @@ execute in minecraft:the_nether run setblock 2 1 2 gold_block
 execute in minecraft:the_end run forceload add -1 -1 0 0
 
 
-tellraw @a {"text":"Curses & Wands setup complete!","color":"light_purple","bold":"true"}
+tellraw @a {"text":"Curses & Wands setup complete!","color":"light_purple","bold":true}
 
 
 execute unless score #SetupState SetupState matches 1.. run scoreboard players set #SetupState SetupState 1
