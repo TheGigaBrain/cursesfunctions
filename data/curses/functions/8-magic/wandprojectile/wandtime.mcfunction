@@ -10,9 +10,11 @@ execute as @s[scores={soultimer=20}] run playsound minecraft:block.note_block.ha
 particle minecraft:dust 0.6 0.6 0.6 3 ~ ~ ~ 12 12 12 0.1 16 force
 
 execute as @a[distance=..32] store result score @s UUID0 run data get entity @s UUID[0]
-execute as @a[distance=..32,tag=!timestop,gamemode=!creative] unless score @s UUID0 = @e[tag=wandtime,sort=nearest,limit=1] UUID0 at @s run function curses:8-magic/wandprojectile/wandtime/stopplayer
+execute as @e[tag=wandtime] at @s as @a[distance=..32] if score @s UUID0 = @e[tag=wandtime,sort=nearest,limit=1] UUID0 run tag @s add timeowner
+execute as @a[distance=..32,tag=!timestop,tag=!timeowner,gamemode=!creative] at @s run function curses:8-magic/wandprojectile/wandtime/stopplayer
 execute as @e[distance=..32,tag=playerpos] at @s as @a[gamemode=!creative] if score @s UUID0 = @e[tag=playerpos,sort=nearest,limit=1] UUID0 run teleport @s @e[tag=playerpos,sort=nearest,limit=1]
 execute as @a at @s unless entity @e[tag=playerpos,sort=nearest,limit=1,distance=..0.01] run tag @s remove timestop
+tag @a remove timeowner
 
 scoreboard players add @e[type=#curses:stasis,distance=..32,tag=!wandprojectile] cursetimer 1
 execute as @e[type=#curses:stasis,distance=..32,tag=!timestop,scores={cursetimer=2..},tag=!wandprojectile] run function curses:8-magic/wandprojectile/wandtime/stoparrow
