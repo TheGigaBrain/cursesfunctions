@@ -1,13 +1,9 @@
 execute positioned ~ ~-1 ~ anchored eyes run teleport @e[tag=clicktest,sort=nearest,limit=1,distance=..4] ^ ^ ^-2
 playsound minecraft:entity.wither.shoot player @a ~ ~ ~ 1 1
-execute positioned ~ ~-0.5 ~ anchored eyes run summon armor_stand ^ ^ ^1.5 {Silent:1,DisabledSlots:8191,Small:1,Invisible:1,Tags:["wanddeath","wandprojectile"]}
-execute positioned 0.0 0.0 0.0 run summon area_effect_cloud ^ ^ ^0.4 {Tags:["wandvector"]}
-team join nocollision @e[tag=wanddeath,sort=nearest,limit=1]
-#teleport @e[tag=wanddeath,sort=nearest,limit=1] ^ ^ ^1
-data modify entity @e[tag=wanddeath,sort=nearest,limit=1] Motion set from entity @e[tag=wandvector,sort=arbitrary,limit=1] Pos
-
-execute as @e[tag=wanddeath,sort=nearest,limit=1] store result score @s Motion0 run data get entity @s Motion[0] 100000
-execute as @e[tag=wanddeath,sort=nearest,limit=1] store result score @s Motion1 run data get entity @s Motion[1] 100000
-execute as @e[tag=wanddeath,sort=nearest,limit=1] store result score @s Motion2 run data get entity @s Motion[2] 100000
+execute anchored eyes run summon armor_stand ^ ^ ^0.5 {Marker:1,Silent:1,DisabledSlots:8191,Small:1,Invisible:1,Tags:["wanddeath"]}
+execute as @e[tag=wanddeath,sort=nearest,limit=1] rotated as @p positioned as @s run teleport @s ~ ~ ~ ~ ~
 
 execute store result score @e[tag=wanddeath,sort=nearest,limit=1] UUID0 run data get entity @s UUID[0]
+
+execute as @e[tag=wanddeath,sort=nearest,limit=1] at @s run function curses:8-magic/usewand/death/raycast
+kill @e[tag=wanddeath]

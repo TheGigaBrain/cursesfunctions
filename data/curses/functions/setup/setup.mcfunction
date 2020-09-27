@@ -14,6 +14,7 @@ scoreboard objectives add manadisplay dummy
 scoreboard objectives add requiredmana dummy
 scoreboard objectives add reqmanadisplay dummy
 scoreboard objectives add talkedtovillager minecraft.custom:minecraft.talked_to_villager
+scoreboard objectives add recursionCount dummy
 
 scoreboard objectives add virus dummy
 scoreboard objectives add cursetimer dummy
