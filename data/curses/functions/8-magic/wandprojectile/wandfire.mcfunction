@@ -14,7 +14,7 @@ execute store result entity @s Motion[2] double 0.00001 run scoreboard players g
 particle flame ~ ~0.5 ~ 0.25 0.25 0.25 0.01 10 force
 playsound minecraft:entity.blaze.shoot player @a ~ ~ ~ 1 0.5
 
-execute positioned ~-0.5 ~ ~-0.5 as @e[dx=0.0,dy=0.0,dz=0.0,type=#curses:mobs,tag=!lostsoul,tag=!clicktest,nbt={HurtTime:0s}] run function curses:8-magic/wandprojectile/wandfire/damageentity
-execute positioned ~-0.5 ~ ~-0.5 as @a[dx=0.0,dy=0.0,dz=0.0] store result score @s UUID0 run data get entity @s UUID[0]
-execute positioned ~-0.5 ~ ~-0.5 as @a[dx=0.0,dy=0.0,dz=0.0] unless score @s UUID0 = @e[tag=wandfire,sort=nearest,limit=1] UUID0 run scoreboard players add @s killedbyplayer 1
-execute positioned ~-0.5 ~ ~-0.5 as @a[dx=0.0,dy=0.0,dz=0.0] unless score @s UUID0 = @e[tag=wandfire,sort=nearest,limit=1] UUID0 run effect give @s instant_damage 1 1 true
+execute positioned ~-0.5 ~ ~-0.5 as @e[dx=0,dy=0,dz=0,type=#curses:mobs,tag=!lostsoul,tag=!clicktest,nbt={HurtTime:0s}] run function curses:8-magic/wandprojectile/wandfire/damageentity
+execute positioned ~-0.5 ~-0.5 ~-0.5 as @a[dx=0,dy=0,dz=0] store result score @s UUID0 run data get entity @s UUID[0]
+execute positioned ~-0.5 ~-0.5 ~-0.5 as @a[dx=0,dy=0,dz=0] unless score @s UUID0 = @e[tag=wandfire,sort=nearest,limit=1] UUID0 run scoreboard players add @s killedbyplayer 1
+execute positioned ~-0.5 ~-0.5 ~-0.5 as @a[dx=0,dy=0,dz=0] unless score @s UUID0 = @e[tag=wandfire,sort=nearest,limit=1] UUID0 run effect give @s instant_damage 1 1 true

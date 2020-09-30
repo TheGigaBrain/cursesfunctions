@@ -9,4 +9,4 @@ execute as @e[tag=wandprojectile] at @s run function curses:8-magic/wandprojecti
 execute as @e[tag=clicktest] at @s unless entity @a[tag=holdingwand,distance=..4] run teleport @s 0 -64 0
 execute as @e[tag=clicktest] at @s unless entity @a[tag=holdingwand,distance=..4] run kill @s
 team join nocollision @e[tag=clicktest]
-scoreboard players reset @a talkedtovillager
+scoreboard players set @a talkedtovillager 0
