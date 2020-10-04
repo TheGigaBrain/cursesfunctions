@@ -12,7 +12,7 @@ execute if data entity @s {SelectedItem:{tag:{WandSpell:"death"}}} run scoreboar
 execute if data entity @s {SelectedItem:{tag:{WandSpell:"time"}}} run scoreboard players set @s requiredmana 2000
 
 tag @s remove wandgravity
-execute at @e[tag=wandprojectile,tag=wandgravity] if score @e[tag=wandprojectile,tag=wandgravity,sort=nearest,limit=1] UUID0 = @s UUID0 run tag @s add wandgravity
+execute at @e[tag=wandprojectile,tag=wandgravity,tag=!launchentity] if score @e[tag=wandprojectile,tag=wandgravity,sort=nearest,limit=1] UUID0 = @s UUID0 run tag @s add wandgravity
 execute if data entity @s {SelectedItem:{tag:{WandSpell:"gravity"}}} run scoreboard players set @s requiredmana 800
 execute if data entity @s {SelectedItem:{tag:{WandSpell:"gravity"}}} if entity @s[tag=wandgravity] run scoreboard players set @s requiredmana 0
 
