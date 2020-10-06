@@ -18,11 +18,17 @@ data merge entity @s {Motion:[0.0d,0.0d,0.0d]}
 
 # We summon a new entity outside of the render distance and teleport it in
 # This forces the client to update the entity, preventing visual glitches
-# This won't work if the client has [0,0] loaded in the end
-execute as @s[type=falling_block] at @s in minecraft:the_end run summon falling_block 0 -64 0 {Tags:["timestop","newblock"],NoGravity:1}
-execute as @s[type=tnt] at @s in minecraft:the_end run summon tnt 0 -64 0 {Tags:["timestop","newblock"],NoGravity:1,Fuse:80}
-execute as @s[type=falling_block] in minecraft:the_end positioned 0 -64 0 run data modify entity @e[tag=newblock,sort=nearest,limit=1] BlockState set from entity @s BlockState
-execute in minecraft:the_end positioned 0 -64 0 run teleport @e[tag=newblock,sort=nearest,limit=1] @s
+# Check for bedrock at 0 0 0 to see if the falling block is in the end; if it is we teleport from the nether instead
+execute as @s[type=falling_block] at @s if block 0 0 0 bedrock in minecraft:the_end run summon falling_block 0 -64 0 {Tags:["timestop","newblock"],NoGravity:1}
+execute as @s[type=tnt] at @s if block 0 0 0 bedrock in minecraft:the_end run summon tnt 0 -64 0 {Tags:["timestop","newblock"],NoGravity:1,Fuse:80}
+execute as @s[type=falling_block] at @s if block 0 0 0 bedrock in minecraft:the_end positioned 0 -64 0 run data modify entity @e[tag=newblock,sort=nearest,limit=1] BlockState set from entity @s BlockState
+execute at @s if block 0 0 0 bedrock in minecraft:the_end positioned 0 -64 0 run teleport @e[tag=newblock,sort=nearest,limit=1] @s
+
+execute as @s[type=falling_block] at @s unless block 0 0 0 bedrock in minecraft:the_nether run summon falling_block 0 -64 0 {Tags:["timestop","newblock"],NoGravity:1}
+execute as @s[type=tnt] at @s unless block 0 0 0 bedrock in minecraft:the_nether run summon tnt 0 -64 0 {Tags:["timestop","newblock"],NoGravity:1,Fuse:80}
+execute as @s[type=falling_block] at @s unless block 0 0 0 bedrock in minecraft:the_nether positioned 0 -64 0 run data modify entity @e[tag=newblock,sort=nearest,limit=1] BlockState set from entity @s BlockState
+execute at @s unless block 0 0 0 bedrock in minecraft:the_nether positioned 0 -64 0 run teleport @e[tag=newblock,sort=nearest,limit=1] @s
+
 execute at @s run data modify entity @e[tag=newblock,sort=nearest,limit=1] {} merge from entity @s {}
 
 # Shulker for block collision, riding an armor stand so it doesn't snap to the block grid
