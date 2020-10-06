@@ -16,10 +16,10 @@ execute as @e[distance=..32,tag=playerpos] at @s as @a[gamemode=!creative] if sc
 execute as @a at @s unless entity @e[tag=playerpos,sort=nearest,limit=1,distance=..0.01] run tag @s remove timestop
 tag @a remove timeowner
 
+execute as @e[tag=blockpos,tag=!initblock,type=armor_stand] at @s run function curses:8-magic/wandprojectile/wandtime/initblock
 scoreboard players add @e[type=#curses:stasis,distance=..32,tag=!wandprojectile] cursetimer 1
-execute as @e[type=#curses:stasis,distance=..32,tag=!timestop,scores={cursetimer=2..},tag=!wandprojectile] run function curses:8-magic/wandprojectile/wandtime/stoparrow
-#execute as @e[tag=timestop,type=falling_block] at @s unless entity @e[tag=blockpos,distance=..1] run data merge entity @s {Time:600}
-execute as @e[tag=timestop,type=#curses:falling_blocks] at @s run teleport @s @e[tag=blockpos,sort=nearest,limit=1,distance=..0.9]
+execute as @e[type=#curses:stasis,type=!#curses:falling_blocks,distance=..32,tag=!timestop,scores={cursetimer=2..},tag=!wandprojectile] run function curses:8-magic/wandprojectile/wandtime/stoparrow
+execute as @e[type=#curses:falling_blocks,distance=..32,tag=!timestop,tag=!wandprojectile] at @s run function curses:8-magic/wandprojectile/wandtime/stopblock
 
 execute as @e[distance=..32,type=#curses:mobs,tag=!lostsoul,nbt=!{NoAI:1b}] run tag @s add timestop
 execute as @e[distance=..32,tag=timestop,type=#curses:mobs] run data merge entity @s {NoAI:1,Silent:1}

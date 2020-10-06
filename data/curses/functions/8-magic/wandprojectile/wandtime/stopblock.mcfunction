@@ -1,9 +1,18 @@
+execute store result score @s Motion0 run data get entity @s Motion[0] 10000
+execute store result score @s Motion1 run data get entity @s Motion[1] 10000
+execute store result score @s Motion2 run data get entity @s Motion[2] 10000
+
+# The falling block entity spawns 0.01 blocks higher than it should
+# But if we teleport it all the way down it won't overwrite the physical block properly
+# We teleport it the rest of the way in initblock.mcfunction, after its time ticks to 1
+teleport @s[nbt={Time:0}] ~ ~-0.009999 ~
+
 execute as @s[type=tnt] store result score @s virus run data get entity @s Fuse
 execute as @s[type=tnt] run scoreboard players operation @s virus += @e[tag=wandtime,sort=nearest,limit=1] cursetimer
 execute as @s[type=tnt] store result entity @s Fuse short 1 run scoreboard players get @s virus
 execute as @s[type=tnt] run scoreboard players reset @s virus
 
-execute as @s[type=falling_block] run data merge entity @s {Time:1}
+execute as @s[type=falling_block,nbt=!{Time:0}] run data merge entity @s {Time:1}
 
 data merge entity @s {Motion:[0.0d,0.0d,0.0d]}
 
@@ -16,7 +25,11 @@ execute as @s[type=falling_block] in minecraft:the_end positioned 0 -64 0 run da
 execute in minecraft:the_end positioned 0 -64 0 run teleport @e[tag=newblock,sort=nearest,limit=1] @s
 execute at @s run data modify entity @e[tag=newblock,sort=nearest,limit=1] {} merge from entity @s {}
 
-summon shulker ~ ~ ~ {Tags:["blockpos"],NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:999999999,Amplifier:0,ShowParticles:0b}],Color:15,DeathLootTable:"minecraft:empty",Invulnerable:1}
-# Remove this line if Mojang ever fixes shulkers
-teleport @e[tag=blockpos,sort=nearest,limit=1] ~ ~0.5 ~
+# Shulker for block collision, riding an armor stand so it doesn't snap to the block grid
+execute at @s run summon armor_stand ~ ~ ~ {Marker:1b,Invisible:1b,Invulnerable:1b,Silent:1b,Small:1b,DisabledSlots:4144959,Tags:["blockpos"],Passengers:[{id:"minecraft:shulker",Tags:["blockpos"],NoAI:1,Silent:1,ActiveEffects:[{Id:14,Duration:999999999,Amplifier:0,ShowParticles:0b}],Color:15,DeathLootTable:"minecraft:empty",Invulnerable:1}]}
+
+scoreboard players operation @e[tag=blockpos,type=armor_stand,sort=nearest,limit=1] Motion0 = @s Motion0
+scoreboard players operation @e[tag=blockpos,type=armor_stand,sort=nearest,limit=1] Motion1 = @s Motion1
+scoreboard players operation @e[tag=blockpos,type=armor_stand,sort=nearest,limit=1] Motion2 = @s Motion2
+
 kill @s
