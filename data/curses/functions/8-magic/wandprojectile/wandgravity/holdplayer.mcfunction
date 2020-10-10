@@ -1,4 +1,3 @@
-execute as @a store result score @s UUID0 run data get entity @s UUID[0]
 execute at @s at @a[distance=..32,nbt={SelectedItem:{tag:{WandSpell:"gravity"}}}] if score @p UUID0 = @s UUID0 run tag @s add gravityowner
 execute at @s at @a[distance=..32] if score @p UUID0 = @s Motion0 run tag @s add gravitytarget
 execute unless entity @s[tag=gravityowner,tag=gravitytarget] run kill @s

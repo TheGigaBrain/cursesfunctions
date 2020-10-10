@@ -3,6 +3,12 @@ scoreboard objectives add UUID0 dummy
 scoreboard objectives add Motion0 dummy
 scoreboard objectives add Motion1 dummy
 scoreboard objectives add Motion2 dummy
+scoreboard objectives add PosX0 dummy
+scoreboard objectives add PosX1 dummy
+scoreboard objectives add PosY0 dummy
+scoreboard objectives add PosY1 dummy
+scoreboard objectives add PosZ0 dummy
+scoreboard objectives add PosZ1 dummy
 
 scoreboard objectives add death deathCount
 scoreboard objectives add killedbyplayer minecraft.killed_by:minecraft.player
@@ -15,6 +21,8 @@ scoreboard objectives add requiredmana dummy
 scoreboard objectives add reqmanadisplay dummy
 scoreboard objectives add talkedtovillager minecraft.custom:minecraft.talked_to_villager
 scoreboard objectives add recursionCount dummy
+
+scoreboard objectives add WandCalibration dummy
 
 scoreboard objectives add virus dummy
 scoreboard objectives add cursetimer dummy

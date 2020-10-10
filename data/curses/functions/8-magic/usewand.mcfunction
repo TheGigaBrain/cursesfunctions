@@ -5,5 +5,6 @@ execute if data entity @s {SelectedItem:{tag:{WandSpell:"teleport"}}} run functi
 execute if data entity @s {SelectedItem:{tag:{WandSpell:"digging"}}} run function curses:8-magic/usewand/digging
 execute if data entity @s {SelectedItem:{tag:{WandSpell:"time"}}} run function curses:8-magic/usewand/time
 execute if data entity @s {SelectedItem:{tag:{WandSpell:"gravity"}}} run function curses:8-magic/usewand/gravity
+execute if data entity @s {SelectedItem:{tag:{WandSpell:"calibration"}}} run function curses:8-magic/usewand/calibration
 
 tag @s remove hasmana
