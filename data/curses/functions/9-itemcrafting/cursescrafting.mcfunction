@@ -19,6 +19,7 @@ execute as @s[nbt={Item:{Count:1b,tag:{CursesId:"greatest_soul_fragment"}}}] if 
 execute as @s[nbt={Item:{Count:1b,tag:{CursesId:"greatest_soul_fragment"}}}] if entity @e[type=item,distance=..1,nbt={Item:{Count:1b,id:"minecraft:blaze_rod"}}] if entity @e[type=item,distance=..1,nbt={Item:{Count:1b,id:"minecraft:clock"}}] run function curses:9-itemcrafting/wands/time
 execute as @s[nbt={Item:{Count:1b,tag:{CursesId:"greatest_soul_fragment"}}}] if entity @e[type=item,distance=..1,nbt={Item:{Count:1b,id:"minecraft:blaze_rod"}}] if entity @e[type=item,distance=..1,nbt={Item:{Count:1b,id:"minecraft:phantom_membrane"}}] run function curses:9-itemcrafting/wands/gravity
 
-execute as @s[nbt={Item:{Count:1b,tag:{CursesId:"soul_fragment"}}}] if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:egg"}}] run function curses:9-itemcrafting/craftspawnegg
+execute as @s[nbt={Item:{Count:1b,tag:{CursesId:"soul_fragment"}}}] if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:egg",Count:1b}}] run function curses:9-itemcrafting/craftspawnegg
+execute as @s[nbt={Item:{Count:16b,tag:{CursesId:"soul_fragment"}}}] if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:egg",Count:16b}}] run function curses:9-itemcrafting/craftspawneggstack
 
 execute as @s[nbt={Item:{Count:1b,tag:{CursesId:"soul_fragment"}}}] if entity @e[type=item,distance=..1,nbt={Item:{id:"minecraft:compass"}}] run function curses:9-itemcrafting/craftcompass
