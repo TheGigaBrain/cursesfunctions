@@ -43,7 +43,7 @@
                         },
                         {
                             "function": "set_nbt",
-                            "tag": "{CursesId:\"soul_fragment\",display:{Name:'{\"text\":\"Soul Fragment\",\"color\":\"dark_red\",\"bold\":\"true\",\"italic\":\"false\"}',Lore:['{\"text\":\"A fragment of a lost soul.\",\"color\":\"gray\",\"italic\":\"false\"}','\"\"','{\"text\":\"Perhaps its magic can be channeled into something more?\",\"color\":\"gray\",\"italic\":\"false\"}']},Enchantments:[{id:unbreaking,lvl:1s}],HideFlags:1}"
+                            "tag": "{CursesId:\"soul_fragment\",display:{Name:'{\"text\":\"Soul Fragment\",\"color\":\"dark_red\",\"bold\":true,\"italic\":false}',Lore:['{\"text\":\"A fragment of a lost soul.\",\"color\":\"gray\",\"italic\":false}','\"\"','{\"text\":\"Perhaps its magic can be channeled into something more?\",\"color\":\"gray\",\"italic\":false}']},Enchantments:[{id:\"minecraft:unbreaking\",lvl:1s}],HideFlags:1}"
                         }
                     ]
                 }
